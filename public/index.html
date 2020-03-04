@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+    <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
+  
+    
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   
+</head>
+
+<body>
+  
+     
+  <!-- Start of home page -->
+  <div data-role="page"  id="home">
+    <!--  home page header -->
+    <div data-role="header" data-theme='b'>
+        <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+        <div data-role="navbar"  data-theme='c'>
+            <ul>
+                         <li><a href="#home">Home</a></li>
+                        <li><a href="#loginPage">Login</a></li>
+                        <li><a href="#policy">Policy</a></li>
+                        <li><a href="#Consign">Consignment</a></li>
+                        <li><a href="#ListAll">Inventory</a></li>
+                        <li><a href="#logout">Logout</a>
+            </ul>
+          </div><!-- /navbar -->
+    </div>
+   <!--  home page content -->
+   <div data-role="content" data-theme='e'>
+    <p id="introduction" style="color: teal;text-align: center"> Voted as the "Best Luxury Consignment Shop" for both 2016 and 2017, and the winner of the 2019 Seattle Chamber of Commerce James Tyree award.
+        <br/> Unlike similar for-profit shops,<b> 100% of Audrey Time Boutique's profits go to charity</b>. </p> 
+        <a href="#policy" class="badge badge-primary">Store Policy & Commision Rate </a> <br>
+        <br><br>
+        <a href="#newaccountPage" class="badge badge-primary">NewUser? Click Here</a> 
+
+        
+        <input type="button" href="#loginPage" value="To Login" id="toLoginPage" />
+    </div>
+
+    <!--  home page footer -->
+    <img id="image2" src="./images/audrey.jpg" alt="Audrey Image" style="width: 30%;padding-left: 30%;position: relative; ">
+    <div data-role="footer" data-theme='b'>
+        <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+    </div>
+</div>
+
+<div data-role="page"  id="Consign">
+  <!--  consignment page header -->
+  
+    <div data-role="header" data-theme='b'>
+      <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+      <div data-role="navbar"  data-theme='c'>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#loginPage">Login</a></li>
+            <li><a href="#policy">Policy</a></li>
+            <li><a href="#Consign">Consignment</a></li>
+            <li><a href="#ListAll">Inventory</a></li>
+            <li><a href="#logout">Logout</a>
+                  
+          </ul>
+        </div><!-- /navbar -->
+  </div>
+  <!-- consignment page content -->
+  <div data-role="content" data-theme='c'>
+      <a href="#ListAll">Review On Sale Items? Click Here</a>
+    <h2>Consignment Form</h2>
+    
+    Item name with description :
+    <input type="text" value="" id="name" style="background-color:rgb(229, 233, 211);text-align:center;" required >
+    
+      
+      <form>
+        <div class="ui-field-contain">
+          <select name="select-category" id="select-category" style="background-color:honeydew;">
+              <option value="Category Selection">Select a Category</option>
+            <option value="Jewery">Jewery</option>
+            <option value="Purse">Purse</option>
+            <option value="Furniture">Furniture</option>
+          
+          </select>
+        </div>
+      </form>
+       
+      <form>
+          <div class="ui-field-contain">
+            <select name="select-brand" id="select-brand"  style="background-color: rgb(199, 219, 231);text-align: center;">
+                <option value="Brand Selection">Select a Brand</option>
+              <option value="Cartier">Cartier</option>
+              <option value="Tiffany">Tiffany</option>
+              <option value="Other">Other</option>
+            
+            </select>
+          </div>
+      </form>
+    
+      
+      Esitimated Price :
+      <input type="number" value="" id="price"style=" background-color: rgb(223, 202, 220); text-align: center;" required >
+      Item Owner :
+      <input type="text" value="" id="owner" style="background-color: rgb(162, 214, 231);text-align: center;"  required>
+     
+      
+
+      <input type="button" value="Click To Add Item" id="buttonAdd"  data-inline="true" />
+        <input type="button" value="Clear Data" id="buttonClear"  data-inline="true" />
+  </div>
+    
+  <!-- consignment   page footer -->
+  <div data-role="footer" data-theme='b'>
+    <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+</div>
+</div>
+
+
+
+
+
+<div data-role="page"  id="ListAll">
+    <!--   page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+      <div data-role="navbar"  data-theme='c'>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#loginPage">Login</a></li>
+            <li><a href="#policy">Policy</a></li>
+            <li><a href="#Consign">Consignment</a></li>
+            <li><a href="#ListAll">Inventory</a></li>
+            <li><a href="#logout">Logout</a>
+                  
+          </ul>
+        </div><!-- /navbar -->
+  </div>
+    <!--   page content -->
+    <div data-role="content" data-theme='e'>
+      <H2 style="color: teal;text-align:center;"> All Consignment Items for Sale </H2>
+      <div id="divItemList" style="margin-left:30%;"></div>
+    </div>
+    <input type="button" value="Sort By Category"  id="buttonSortCategory"   />
+    <input type="button" value="Sort By Brand" id="buttonSortBrand"   />
+    <!-- <input type="button" value="Sort By Price" id="buttonSortPrice"  style="background-color: rgb(158, 235, 212);"  /> -->
+      <br/><br/>
+      <input type="number" value="" id="deleteID" data-inline="true" />
+      <input type="button" value="Delete Item by ID from box" id="buttonDelete" data-inline="true"   />
+    <!--   page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+  </div>
+</div>      
+    
+<div data-role="page"  id="detailPage">
+    <!--   page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+      <div data-role="navbar"  data-theme='c'>
+          <ul>
+            <li><a href="#home">Home</a></li>
+                <li><a href="#loginPage">Login</a></li>
+                <li><a href="#policy">Policy</a></li>
+                <li><a href="#Consign">Consignment</a></li>
+                <li><a href="#ListAll">Inventory</a></li>
+                <li><a href="#logout">Logout</a>
+                  
+          </ul>
+        </div><!-- /navbar -->
+  </div>
+    <!--  content -->
+   <div data-role="content" data-theme='a'>
+        <h2 style="text-align: center;color: teal;"> Here are the details</h2>
+        <div>
+          <p id="IDparmHere" >change1</p>  <!-- hidden    a place to stash the movie title -->
+          <p style="text-align: center;background-color: rgb(229, 233, 211);margin-left: 25%;">
+            <span class="bold" > ID:    </span> <span id="oneID" </span> 
+         </p>
+          <p style="text-align: center;background-color: rgb(229, 233, 211);margin-left: 25%;">
+            <span class="bold" > Name:    </span> <span id="oneName" </span> 
+         </p>
+          <p   style="text-align:center;background-color:honeydew;margin-left: 25%;"> 
+            <span class="bold"> Category: </span> <span id="oneCategory"></span>
+         </p>
+          <p style="text-align: center;background-color:rgb(199, 219, 231);margin-left: 25%;">
+          <span class="bold">Brand:  </span> <span id="oneBrand"></span>
+         </p>
+          
+         <p style="text-align: center;background-color:rgb(223, 202, 220); margin-left: 25%;">
+          <span class="bold"> Price:   $</span> <span id="onePrice" </span> 
+       </p>
+       <p style="text-align: center;background-color:rgb(162, 214, 231);margin-left: 25%;">
+        <span class="bold"> Owner:    </span> <span id="oneOwner" </span> 
+     </p>
+
+      </div>
+    </div> 
+ 
+    <!--    footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+  </div>
+</div>
+
+    <!-- Start of policy page -->
+    <div data-role="page"  id="policy">
+        <!--   header -->
+        <div data-role="header" data-theme='b'>
+            <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+            <div data-role="navbar"  data-theme='c'>
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#loginPage">Login</a></li>
+                  <li><a href="#policy">Policy</a></li>
+                  <li><a href="#Consign">Consignment</a></li>
+                  <li><a href="#ListAll">Inventory</a></li>
+                  <li><a href="#logout">Logout</a>                     
+                </ul>
+              </div><!-- /navbar -->
+        </div>
+        <!--   content -->
+        <div data-role="content" data-theme='e'>
+                <h1 style="color: teal;"> Store Policy</h1>
+                <b> Pricing will follow this schedule:</b>
+                <b> 45 days @ regular price <br/>
+                 45 days @ sale price (50% discount) </b>
+               <p>  Audrey Time  reserves the right to split suits for better pricing. <br>
+                 Audrey reserves the right to retain high-end designer merchandise for a period longer than 90 days.<br>
+                 Audreys assumes no liability in the event of theft, loss, or damage to merchandise.<br>
+                 At the end of 90 days consigner must collect unsold merchandise. Unclaimed items will be donated to charity after a 7-day grace period.</p>
+                 
+              <h4>   Commission Rate : 50/50 between Audrey and client</h4>
+                <p> Consigners who wish to receive their check by mail must provide Adurey with a stamped, self-addressed envelope.<br>
+                 Consigner must call prior to the 12th of the month to request a check for the previous month’s sales.<br/>
+                  Checks are then available for pick-up on the 16th.</p>
+               
+                   <img id="image2" src="./images/audrey.jpg" alt="Audrey Image" style="width: 30%;padding-left: 30%;position: relative; ">
+        </div>
+        <!--  footer -->
+        <div data-role="footer" data-theme='b'>
+            <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+        </div>
+    </div>
+  
+  
+    <!-- Start of logout page -->
+    <div data-role="page"  id="logout">
+      <!--   header -->
+      <div data-role="header" data-theme='b'>
+          <h1>Audrey Time Vintage . Boutique . Consignment</h1>
+         
+      </div>
+      <!--   content -->
+      <div data-role="content" data-theme='e'>
+         
+          <h3>You just log out! </h3>
+          <h4>Thank you for visiting Audrey Time Vintage. Boutique. Consignment</h4>
+          <a href="#home">Home Page</a>
+          <p> Contact: support@audreytvb.com</p>
+  
+      </div>
+        
+      <!--   footer -->
+      <div data-role="footer" data-theme='b'>
+          <h1>Copyrigtht 2020 Audrey Time Vintage Boutique Consignment</h1>
+      </div>
+  </div>
+  <!-- Start of  page -->
+  <div data-role="page"  id="refreshPage">
+    <!--  content -->
+     <div data-role="content" >
+           <!--  this page is used to to jump to and then back to a page to force a pagebeforeload event -->
+     </div>
+ </div> 
+ <script src="/public/javascripts/index.js"></script>
+</body>
